@@ -2,6 +2,7 @@
 
 return [
     // Labels
+    'table_no'      => 'No',
     'student'       => 'Siswa',
     'list'          => 'Daftar Siswa',
     'search'        => 'Cari Siswa',
@@ -27,6 +28,7 @@ return [
     'undeleted'      => 'Data Siswa gagal dihapus.',
     'undeleteable'   => 'Data Siswa tidak dapat dihapus.',
     'export_excel'   => 'Export Excel',
+    'export_pdf'     => 'Export PDF',
 
     // Attributes
     'name'        => 'Nama Siswa',

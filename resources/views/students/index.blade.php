@@ -9,6 +9,7 @@
             <a href="{{ route('students.create') }}" class="btn btn-success">{{ __('student.create') }}</a>
         @endcan
             <a href="{{ route('students.export_excel') }}" class="btn btn-primary">{{ __('student.export_excel') }}</a>
+            <a href="{{ route('students.export_pdf') }}" class="btn btn-warning" target="_blank">{{ __('student.export_pdf') }}</a>
     </div>
     <h1 class="page-title">{{ __('student.list') }} <small>{{ __('app.total') }} : {{ $students->total() }} {{ __('student.student') }}</small></h1>
 </div>

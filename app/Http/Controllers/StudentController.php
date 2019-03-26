@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Student;
 use Illuminate\Http\Request;
 use App\Exports\StudentsExport;
@@ -123,5 +124,13 @@ class StudentController extends Controller
     public function exportExcel()
     {
         return Excel::download(new StudentsExport, 'students.xlsx');
+    }
+
+    public function exportPdf()
+    {
+        $students = Student::all();
+
+        $pdf = PDF::loadView('students.exports.index_pdf', compact('students'));
+        return $pdf->stream('student.pdf');
     }
 }
