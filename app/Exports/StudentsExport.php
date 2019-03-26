@@ -3,15 +3,15 @@
 namespace App\Exports;
 
 use App\Student;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
 
-class StudentsExport implements FromCollection
+class StudentsExport implements FromView
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    public function view(): View
     {
-        return Student::all();
+        return view('students.exports.index_excel', [
+            'students' => Student::all(),
+        ]);
     }
 }
