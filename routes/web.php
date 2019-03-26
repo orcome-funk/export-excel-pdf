@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     /*
      * Students Export
      */
-    Route::get('/students/export', 'StudentController@export')->name('students.export');
+    Route::get('/students/export_excel', 'StudentController@exportExcel')->name('students.export_excel');
 
     /*
      * Students Routes

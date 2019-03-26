@@ -8,7 +8,7 @@
         @can('create', new App\Student)
             <a href="{{ route('students.create') }}" class="btn btn-success">{{ __('student.create') }}</a>
         @endcan
-            <a href="{{ route('students.export') }}" class="btn btn-primary">{{ __('student.export_excel') }}</a>
+            <a href="{{ route('students.export_excel') }}" class="btn btn-primary">{{ __('student.export_excel') }}</a>
     </div>
     <h1 class="page-title">{{ __('student.list') }} <small>{{ __('app.total') }} : {{ $students->total() }} {{ __('student.student') }}</small></h1>
 </div>
