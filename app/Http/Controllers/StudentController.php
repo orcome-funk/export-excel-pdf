@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use App\Exports\StudentsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -116,5 +118,11 @@ class StudentController extends Controller
         }
 
         return back();
+    }
+
+    public function export()
+    {
+        // echo "Ini halaman export";
+        return Excel::download(new StudentsExport, 'students.xlsx');
     }
 }

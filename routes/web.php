@@ -16,10 +16,18 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::middleware('auth')->group(function () {
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-/*
- * Students Routes
- */
-Route::resource('students', 'StudentController');
+    /*
+     * Students Export
+     */
+    Route::get('/students/export', 'StudentController@export')->name('students.export');
+
+    /*
+     * Students Routes
+     */
+    Route::resource('students', 'StudentController');
+
+});
